@@ -592,8 +592,7 @@ defaultLogStr loc src level msg =
     -- taken from file-location package
     -- turn the TH Loc loaction information into a human readable string
     -- leaving out the loc_end parameter
-    fileLocStr = (loc_package loc) ++ ':' : (loc_module loc) ++
-      ' ' : (loc_filename loc) ++ ':' : (line loc) ++ ':' : (char loc)
+    fileLocStr = (loc_filename loc) ++ ':' : (line loc) ++ ':' : (char loc)
       where
         line = show . fst . loc_start
         char = show . snd . loc_start
